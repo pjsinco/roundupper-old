@@ -34,7 +34,7 @@
       copyTextVersion: function() {
         const text =  [
           'Most recent posts: ' + this.date,
-          '(http://thedo.osteopathic.org)',
+          '(https://thedo.osteopathic.org)',
           '',
         ].join('\n');
 
