@@ -43,7 +43,7 @@ export default {
       headline: 'Lorem headline',
       excerpt: 'Lorem excerpt',
       link: '',
-      imageUrl: 'http://picsum.photos/320/213',
+      imageUrl: 'https://picsum.photos/320/213',
       ruleBelow: true,
       ruleAbove: false,
       hasRules: true,

@@ -50,7 +50,7 @@
         headline: 'Lorem headline',
         excerpt: 'Lorem excerpt',
         link: '',
-        imageUrl: 'http://picsum.photos/134/89',
+        imageUrl: 'https://picsum.photos/134/89',
         ruleBelow: true,
         ruleAbove: false,
         hasRules: true,

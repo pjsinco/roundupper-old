@@ -47,7 +47,7 @@
         headline: 'Lorem headline',
         excerpt: 'Lorem excerpt',
         link: '',
-        imageUrl: 'http://picsum.photos/480/320',
+        imageUrl: 'https://picsum.photos/480/320',
         hasRules: false,
         buttonText: 'Read now'
       };
