@@ -27,7 +27,7 @@
       
       return {
         alt: 'Banner image',
-        imageUrl: 'http://placehold.it/600x300',
+        imageUrl: 'https://placehold.it/600x300',
       }
     }
   }
