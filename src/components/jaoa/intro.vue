@@ -85,9 +85,9 @@
         teaser: 'Lorem teaser',
         blurb: 'Lorem ipsum dolor',
         buttonText: 'Lorem button',
-        coverImageSrc: 'http://placehold.it/380x525',
+        coverImageSrc: 'https://placehold.it/380x525',
         color: jaoa.colors[0].toLowerCase(),
-        url: 'http://jaoa.org/Issue.aspx',
+        url: 'https://jaoa.org/Issue.aspx',
         jaoa,
       }
     }

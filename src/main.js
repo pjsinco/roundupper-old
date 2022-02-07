@@ -1,8 +1,7 @@
-import Vue from 'vue'
-import routes from './routes'
+import Vue from 'vue';
+import routes from './routes';
 
 const app = new Vue({
-
   el: '#app',
 
   mounted: function() {
@@ -13,25 +12,23 @@ const app = new Vue({
     this.currentRoute = window.location.pathname;
   },
 
-  methods: {
-
-  },
+  methods: {},
 
   data: {
-    currentRoute: window.location.pathname
+    currentRoute: window.location.pathname,
   },
 
   computed: {
-    ViewComponent () {
-      return routes[this.currentRoute]
-    }
+    ViewComponent() {
+      return routes[this.currentRoute];
+    },
   },
 
-  render (h) {
-    return h(this.ViewComponent)
-  }
-})
+  render(h) {
+    return h(this.ViewComponent);
+  },
+});
 
 window.addEventListener('popstate', () => {
-  app.currentRoute = window.location.pathname
-})
+  app.currentRoute = window.location.pathname;
+});
