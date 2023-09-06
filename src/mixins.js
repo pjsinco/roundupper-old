@@ -93,6 +93,16 @@ export default {
       Object.assign(this.$data, this.$options.data());
     },
 
+    getPathname: function() {
+      var rawPathname = window.location.pathname;
+
+      if (window.location.href == 'https://pjsinco.github.io/roundupper/') {
+        return rawPathname.substring('/roundupper/'.length);
+      }
+
+      return rawPathname;
+    },
+
     onMouseLeave: function() {
       document
         .getElementById('copyHtml')

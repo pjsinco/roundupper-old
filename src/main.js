@@ -5,17 +5,27 @@ const app = new Vue({
   el: '#app',
 
   mounted: function() {
-    this.currentRoute = window.location.pathname;
+    this.currentRoute = this.getPathname();
   },
 
   updated: function() {
-    this.currentRoute = window.location.pathname;
+    this.currentRoute = this.getPathname();
   },
 
-  methods: {},
+  methods: {
+    getPathname: function() {
+      var rawPathname = window.location.pathname;
+
+      if (window.location.href == 'https://pjsinco.github.io/roundupper/') {
+        return rawPathname.substring('/roundupper/'.length);
+      }
+
+      return rawPathname;
+    },
+  },
 
   data: {
-    currentRoute: window.location.pathname,
+    currentRoute: null,
   },
 
   computed: {
@@ -30,5 +40,12 @@ const app = new Vue({
 });
 
 window.addEventListener('popstate', () => {
-  app.currentRoute = window.location.pathname;
+  var pathname = window.location.pathname;
+
+  if (window.location.href == 'https://pjsinco.github.io/roundupper/') {
+     pathname = pathname.substring('/roundupper/'.length);
+  }
+
+
+  app.currentRoute = pathname;
 });
