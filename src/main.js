@@ -6,6 +6,7 @@ const app = new Vue({
 
   mounted: function() {
     this.currentRoute = window.location.pathname;
+    console.log('this.currentRoute', this.currentRoute);
   },
 
   updated: function() {

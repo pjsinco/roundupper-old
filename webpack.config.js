@@ -5,8 +5,8 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    //publicPath: '/dist/',
-    publicPath: '/roundupper/',
+    publicPath: '/dist/',
+    //publicPath: '/roundupper/',
     filename: 'build.js'
   },
   module: {
