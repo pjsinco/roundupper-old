@@ -19,6 +19,9 @@ const app = new Vue({
       var rawPathname = window.location.pathname;
       console.log('getPathname - rawPathname', rawPathname);
 
+      console.log('window.location.href equals ...');
+      console.log(window.location.href == 'https://pjsinco.github.io/roundupper/')
+
       if (window.location.href == 'https://pjsinco.github.io/roundupper/') {
         return rawPathname.substring('/roundupper/'.length);
       }
