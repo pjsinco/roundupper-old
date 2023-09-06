@@ -6,10 +6,12 @@ const app = new Vue({
 
   mounted: function() {
     this.currentRoute = this.getPathname();
+    console.log('mounted - this.currentRoute', this.currentRoute);
   },
 
   updated: function() {
     this.currentRoute = this.getPathname();
+    console.log('updated - this.currentRoute', this.currentRoute);
   },
 
   methods: {
@@ -30,6 +32,7 @@ const app = new Vue({
 
   computed: {
     ViewComponent() {
+      console.log('routes[this.currentRoute]', routes[this.currentRoute]);
       return routes[this.currentRoute];
     },
   },
