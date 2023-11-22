@@ -7,6 +7,7 @@ div.blank
         option(value="the-do-feature") Feature
         option(value="the-do-brief") Brief
       optgroup(label="Other parts")
+        option(value="the-do-ad") Ad
         option(value="the-do-quote") Quote
         option(value="the-do-section-title") Section Title
         option(value="the-do-note") Note
@@ -19,6 +20,7 @@ div.blank
 </template>
 
 <script>
+import ad from './components/the-do/ad.vue';
 import navbar from './components/navbar.vue';
 import selectTemplate from './components/select-template.vue';
 import topStory from './components/the-do/top-story.vue';
@@ -44,6 +46,7 @@ export default {
     'the-do-date': date,
     'the-do-note': note,
     'the-do-sponsored-content': sponsoredContent,
+    'the-do-ad': ad,
   },
 
   data: function() {

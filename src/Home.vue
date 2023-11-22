@@ -224,20 +224,8 @@
     font-size: 93.8%;    
     background-color: #ffffff; 
     background-image: 
-      -webkit-linear-gradient(0deg, transparent .05em, rgba(240,248,255,1) .05em, rgba(240,248,255,1) .125000em, transparent .125000em),
-      -webkit-linear-gradient(rgba(240,248,255,1) .062500em, transparent .062500em);
-    background-image: 
-      -moz-linear-gradient(0deg, transparent .05em, rgba(240,248,255,1) .05em, rgba(240,248,255,1) .125000em, transparent .125000em),
-      -moz-linear-gradient(rgba(240,248,255,1) .062500em, transparent .062500em);
-    background-image: 
-      -ms-linear-gradient(0deg, transparent .05em, rgba(240,248,255,1) .05em, rgba(240,248,255,1) .125000em, transparent .125000em),
-      -ms-linear-gradient(rgba(240,248,255,1) .062500em, transparent .062500em);
-    background-image: 
-      -o-linear-gradient(0deg, transparent .05em, rgba(240,248,255,1) .05em, rgba(240,248,255,1) .125000em, transparent .125000em),
-      -o-linear-gradient(rgba(240,248,255,1) .062500em, transparent .062500em);
-    background-image: 
-      linear-gradient(0deg, transparent .05em, rgba(240,248,255,1) .05em, rgba(240,248,255,1) .125000em, transparent .125000em),
-      inear-gradient(rgba(240,248,255,1) .062500em, transparent .062500em);
+      linear-gradient(to right, rgba(240,248,255,.8) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(240,248,255,.8) 1px, transparent 1px);
     background-size: .75em .75em;  
     background-position: 0 -0.5em; 
 
