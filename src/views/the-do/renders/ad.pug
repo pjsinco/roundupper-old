@@ -1,0 +1,12 @@
+table(style="border-collapse: collapse; line-height: 16px;" width="100%" cellspacing="0" cellpadding="0" align="center" slot="render")
+  tr
+    td(class="centermepadtop10" align="center")
+      a(class="Ad" :href="adUrl" target="_blank")
+        img(:src="adSrc" border="0" :alt="altText")
+  tr(v-if="ruleBelow")
+    td(align="center")
+      table(class="fullwidth" style="border-collapse: collapse; height: 50px;" width="319" cellspacing="0" cellpadding="0" align="center")
+        tr
+          td(style="border-bottom: 1px solid #efefef;") &#160;
+        tr
+          td &#160;
