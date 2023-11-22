@@ -1,0 +1,20 @@
+div(slot="form")
+  div.form-group
+    label(for="adUrl") Ad URL
+    input(type="text" id="adUrl" v-model="adUrl").form-control
+
+  div.form-group
+    label(for="adSrc") Ad Image URL
+    input(type="text" id="adSrc" v-model="adSrc").form-control
+
+  div.form-group
+    label(for="altText") Alt Text
+    input(type="text" id="altText" v-model="altText").form-control
+
+  div.form-group(v-if="hasRules")
+    div.checkbox-inline
+      label(style="margin-left: 0;")
+        input(type="checkbox" name="rule_below" v-model="ruleBelow").
+        | Rule below
+
+  include ./../../includes/copy-buttons
