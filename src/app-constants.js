@@ -15,6 +15,10 @@ module.exports = {
         path: '/cbs',
         name: 'Certifying Board Services'
       },
+      {
+        path: '/aoa-general',
+        name: 'AOA General'
+      },
     ],
   },
 

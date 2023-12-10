@@ -1,0 +1,6 @@
+div(slot="form")
+  div.form-group
+    label(for="input") Text
+    textarea(id="input" :value="input" @input="update" rows="16").form-control
+
+  include ./../../../includes/copy-buttons
