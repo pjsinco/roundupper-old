@@ -26,7 +26,11 @@
         paragraph(text) {
           return `
             <p style="margin: 0 0 0 0;">${text}<br>&nbsp;</p>\n`;
-        }
+        },
+
+        // link(href, title, text) {
+        // }
+
       };
 
       marked.use({ renderer });
