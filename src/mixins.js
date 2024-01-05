@@ -1,6 +1,7 @@
 import Clipboard from './../node_modules/clipboard/dist/clipboard.min.js';
 
 function updateHeights(context = '') {
+
   console.log('updatingHeights in ' + context);
   const splitLeft = document.querySelector('.split-left');
   const splitRight = document.querySelector('.split-right');

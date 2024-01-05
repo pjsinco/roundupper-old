@@ -19,6 +19,10 @@ module.exports = {
         path: '/aoa-general',
         name: 'AOA General'
       },
+      {
+        path: '/affiliates',
+        name: 'Affiliates'
+      },
     ],
   },
 

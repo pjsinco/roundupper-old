@@ -2,6 +2,7 @@ import Vue from 'vue';
 import routes from './routes';
 
 const app = new Vue({
+
   el: '#app',
 
   mounted: function() {
@@ -31,4 +32,5 @@ const app = new Vue({
 
 window.addEventListener('popstate', () => {
   app.currentRoute = window.location.pathname;
+
 });

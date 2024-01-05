@@ -11,6 +11,7 @@
           form.form-inline(v-on:submit="handleSubmit")
             select.form-control.input-lg
               option(v-for="route in app.routes" v-bind:value="route.path") {{ route.name }}
+
             button(type="submit" style="padding-left: 3rem; padding-right: 3rem; margin-left: 1rem;").btn.btn-primary.btn-lg Go
     
 

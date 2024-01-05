@@ -5,8 +5,10 @@
         slot(name="form")
   
     div.column.split-right.graph-paper
-      div#rendered
-        slot(name="render")
+      template
+        slot(name="render-container")
+          div#rendered
+            slot(name="render")
   
     div#clone(style="position: absolute; top: -5000px; left: -5000px")
 </template>
