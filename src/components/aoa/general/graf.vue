@@ -28,8 +28,59 @@
             <p style="margin: 0 0 0 0;">${text}<br>&nbsp;</p>\n`;
         },
 
-        // link(href, title, text) {
-        // }
+        heading(text, level) {
+          if (level == 1) {
+            const h1styles = [
+              'color: #000066;',
+              'font-size: 20px;',
+              'font-weight: bold;',
+              'line-height: 28px;',
+              'margin-bottom: 12px;',
+              'margin-top: 0;',
+              'text-align: center',
+            ];
+            return `<h1 style="${h1styles.join('; ')}">${text}</h1>\n`;
+          }
+
+          return;
+
+        },
+
+        link(href, title, text) {
+          return `
+            <a href="${href}" 
+               style="color: #22a49c; font-weight: bold; text-decoration: none;"
+               title="${title}">${text}</a>`;
+        },
+
+        list(body, ordered) {
+          const divStyles = [
+            'text-align: left',
+            'color: #141416',
+            'margin: 0',
+            'padding: 0',
+            'font-family: Arial, sans-serif',
+            'font-size: 16px',
+            'font-weight: normal',
+            'line-height: 24px',
+          ];
+
+          const listStyles = [
+            'color: #141416',
+            'margin: 0 0 0 25px',
+            'padding: 0',
+            'font-family: Arial, sans-serif',
+            'font-size: 16px',
+            'line-height: 24p',
+          ];
+
+          const listType = ordered ? 'ol' : 'ul';
+
+          return `
+            <div class="forOutlooks" pardot-region="unordered_list" style="${divStyles.join('; ')}">
+              <${listType} class="glist" style="${listStyles.join('; ')}" align="left" type="disc">${body}</ol>
+              <${listType}></div>\n`;
+          },
 
       };
 
@@ -39,6 +90,10 @@
         gfm: true,
         breaks: true,
         headerIds: false,
+      });
+
+      this.$nextTick(() => {
+        this.input = `# Lorem ipsum dolor sit amet\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n`;
       });
 
     },
@@ -67,7 +122,7 @@
 
     data: function() {
       return {
-        input: '# hello',
+        input: '',
       }
     },
 
