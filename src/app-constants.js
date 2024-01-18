@@ -23,6 +23,10 @@ module.exports = {
         path: '/affiliates',
         name: 'Affiliates'
       },
+      {
+        path: '/jom',
+        name: 'JOM'
+      },
     ],
   },
 

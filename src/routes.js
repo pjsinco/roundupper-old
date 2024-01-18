@@ -4,6 +4,7 @@ import Home from './Home.vue'
 import TheDO from './TheDO.vue'
 import AoaGeneral from './AoaGeneral.vue'
 import Affiliates from './Affiliates.vue'
+import Jom from './Jom.vue'
 
 export default {
   '/': Home,
@@ -12,4 +13,5 @@ export default {
   '/the-do': TheDO,
   '/aoa-general': AoaGeneral,
   '/affiliates': Affiliates,
+  '/jom': Jom,
 }

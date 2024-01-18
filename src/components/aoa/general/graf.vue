@@ -24,8 +24,10 @@
     mounted() {
       const renderer = {
         paragraph(text) {
+          //return `
+          //  <p style="margin: 0 0 0 0;">${text}<br>&nbsp;</p>\n`;
           return `
-            <p style="margin: 0 0 0 0;">${text}<br>&nbsp;</p>\n`;
+            <p style="margin: 0 0 0 0;">${text}</p>`;
         },
 
         heading(text, level) {
@@ -67,7 +69,7 @@
 
           const listStyles = [
             'color: #141416',
-            'margin: 0 0 0 25px',
+            'margin: 25px 0 25px 25px',
             'padding: 0',
             'font-family: Arial, sans-serif',
             'font-size: 16px',
@@ -75,10 +77,19 @@
           ];
 
           const listType = ordered ? 'ol' : 'ul';
+          const listStyleType = ordered ? '1' : 'disc'
+          console.log('ordered', ordered);
+          console.log('listType', listType);
 
           return `
             <div class="forOutlooks" pardot-region="unordered_list" style="${divStyles.join('; ')}">
-              <${listType} class="glist" style="${listStyles.join('; ')}" align="left" type="disc">${body}</ol>
+              <${listType} 
+                class="glist" 
+                style="${listStyles.join('; ')}" 
+                align="left" 
+                type="${listStyleType}"
+              >
+                ${body}</ol>
               <${listType}></div>\n`;
           },
 
@@ -88,7 +99,7 @@
 
       marked.setOptions({
         gfm: true,
-        breaks: true,
+        //breaks: true,
         headerIds: false,
       });
 
