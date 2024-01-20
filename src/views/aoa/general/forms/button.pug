@@ -1,0 +1,10 @@
+div(slot="form")
+  div.form-group
+    label(for="text") Button Text
+    input(type="text" id="text" v-model="text").form-control
+
+  div.form-group
+    label(for="link") Link
+    input(type="text" id="link" v-model="link").form-control
+
+  include ./../../../includes/copy-buttons

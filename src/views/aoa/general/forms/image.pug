@@ -1,0 +1,14 @@
+div(slot="form")
+  div.form-group
+    label(for="imageUrl") Image URL
+    input(type="text" id="imageUrl" v-model="imageUrl").form-control
+
+  div.form-group
+    label(for="imageWidth") Display width in pixels
+    input(type="text" id="imageWidth" v-model="imageWidth").form-control
+
+  div.form-group
+    label(for="alt") Alt text
+    input(type="text" id="alt" v-model="altText").form-control
+
+  include ./../../../includes/copy-buttons

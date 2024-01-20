@@ -1,0 +1,10 @@
+div(slot="form")
+  div.form-group
+    label(for="imageUrl") Image URL
+    input(type="text" id="imageUrl" v-model="imageUrl").form-control
+
+  div.form-group
+    label(for="link") Image link
+    input(type="text" id="link" v-model="link").form-control
+
+  include ./../../../includes/copy-buttons
