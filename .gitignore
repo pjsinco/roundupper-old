@@ -1,5 +1,6 @@
 .DS_Store
 node_modules/
+node_modules_upgrade_try/
 npm-debug.log
 yarn-error.log
 *.swp
