@@ -4,11 +4,12 @@ import routes from './routes';
 const app = new Vue({
   el: '#app',
 
-  mounted: function() {
+  mounted: function () {
+    console.log('hxy');
     this.currentRoute = window.location.pathname;
   },
 
-  updated: function() {
+  updated: function () {
     this.currentRoute = window.location.pathname;
   },
 

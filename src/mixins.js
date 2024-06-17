@@ -31,11 +31,17 @@ function updateHeights(context = '') {
 import { app } from './app-constants';
 
 export default {
-  updated: function() {
+  updated: function () {
     updateHeights('updated');
   },
 
-  mounted: function() {
+  filters: {
+    stripSpaces: function (str) {
+      return str.trim();
+    },
+  },
+
+  mounted: function () {
     console.clear();
 
     this.handleVerticalRule();
@@ -56,7 +62,7 @@ export default {
 
     $window.resize(updateHeights);
 
-    $window.scroll(function() {
+    $window.scroll(function () {
       if ($window.scrollTop() >= stickValue) {
         if (splitLeft.scrollHeight < splitRight.scrollHeight) {
           $sidebar.addClass('stick');
@@ -73,7 +79,7 @@ export default {
   props: ['currentTemplate'],
 
   methods: {
-    handleVerticalRule: function() {
+    handleVerticalRule: function () {
       if (this.$root.currentRoute === '/') {
         document.body.classList.add('no-rule');
       } else {
@@ -81,29 +87,29 @@ export default {
       }
     },
 
-    addSelectOnFocus: function() {
-      document.querySelectorAll('input[type=text]').forEach(function(input) {
-        input.addEventListener('focus', function() {
+    addSelectOnFocus: function () {
+      document.querySelectorAll('input[type=text]').forEach(function (input) {
+        input.addEventListener('focus', function () {
           this.select();
         });
       });
     },
 
-    reset: function() {
+    reset: function () {
       Object.assign(this.$data, this.$options.data());
     },
 
-    onMouseLeave: function() {
+    onMouseLeave: function () {
       document
         .getElementById('copyHtml')
         .classList.remove('tooltipped', 'tooltipped-w');
     },
 
-    getRenderedHtml: function() {
+    getRenderedHtml: function () {
       return document.getElementById('rendered').innerHTML;
     },
 
-    collapseSelection: function(elementId) {
+    collapseSelection: function (elementId) {
       const elem = document.getElementById(elementId);
 
       if (window.getSelection()) {
@@ -111,15 +117,15 @@ export default {
       }
     },
 
-    cloneHtml: function(html) {
+    cloneHtml: function (html) {
       document.getElementById('clone').innerText = html;
     },
 
-    cloneRenderedVersion: function() {
+    cloneRenderedVersion: function () {
       const htmlVersion = document.getElementById('rendered');
     },
 
-    popUpToast: function(title, message, color = '#1ccacd') {
+    popUpToast: function (title, message, color = '#1ccacd') {
       const toast = document.getElementById('toastContainer');
       document.getElementsByClassName('toast')[0].style.backgroundColor = color;
       toast.querySelector('.toast-title').innerText = title;
@@ -137,7 +143,7 @@ export default {
      * @param {function} manipulate Function to execute on markup
      *   of the rendered element, such as find-replace.
      */
-    copyHtml: function(manipulate = html => html) {
+    copyHtml: function (manipulate = (html) => html) {
       this.collapseSelection('clone');
 
       const rawHtml = this.getRenderedHtml();
@@ -147,14 +153,14 @@ export default {
       this.cloneHtml(html);
 
       const clipboard = new Clipboard('#copyHtml', {
-        target: function(trigger) {
+        target: function (trigger) {
           return document.getElementById('clone');
         },
       });
 
       clipboard.on(
         'success',
-        function(evt) {
+        function (evt) {
           this.clipboardSuccess(
             document.getElementById('copyHtml'),
             'HTML code copied',
@@ -166,7 +172,7 @@ export default {
       );
     },
 
-    clipboardSuccess: function(
+    clipboardSuccess: function (
       el,
       title = 'Copied!',
       message = 'Ready to paste',
@@ -177,7 +183,7 @@ export default {
 
       rendered.addEventListener(
         'animationend',
-        function(evt) {
+        function (evt) {
           this.classList.remove('animated', 'jello');
         },
         { once: true }
@@ -193,14 +199,14 @@ export default {
      *
      * @param {string} text The text to copy
      */
-    copyText: function(text) {
+    copyText: function (text) {
       const clipboard = new Clipboard('#copyTextVersion', {
-        text: trigger => text,
+        text: (trigger) => text,
       });
 
       clipboard.on(
         'success',
-        function(evt) {
+        function (evt) {
           this.clipboardSuccess(
             document.getElementById('copyTextVersion'),
             'Text version copied',
@@ -219,7 +225,7 @@ export default {
      * @param {string} str The string in which to find the term
      * @param {string} surroundChar The character to surround the string
      */
-    surround: function(term, str, surroundChar) {
+    surround: function (term, str, surroundChar) {
       const re = new RegExp(term, 'g');
       return str.replace(re, surroundChar + '$&' + surroundChar);
     },
@@ -229,7 +235,7 @@ export default {
      *
      * @param { string } path  The new pathname, e.g. "/the-do"
      */
-    navigate: function(path) {
+    navigate: function (path) {
       this.$root.currentRoute = path;
       window.history.pushState(null, null, path);
     },

@@ -7,47 +7,43 @@
 </template>
 
 <script>
+import workspace from './../workspace.vue';
+import mixins from './../../mixins';
 
-  import workspace from './../workspace.vue';
-  import mixins from './../../mixins';
+export default {
+  name: 'the-do-ad',
 
-  export default {
-    name: 'the-do-ad',
+  components: {
+    workspace: workspace,
+  },
 
-    components: {
-      'workspace': workspace,
+  mixins: [mixins],
+
+  methods: {
+    copy: function () {
+      this.copyHtml();
     },
 
-    mixins: [mixins],
+    copyTextVersion: function () {
+      const text = [
+        this.altText,
+        '------------------------------------' +
+          '------------------------------------',
+        this.adUrl,
+      ].join('\n');
 
-    methods: {
-      copy: function() {
-        this.copyHtml();
-      },
-  
-      copyTextVersion: function() {
-        const text = [
-          this.altText,
-          '------------------------------------' +
-            '------------------------------------',
-          this.adUrl,
-        ].join('\n');
-
-        return this.copyText(text);
-      },
-
+      return this.copyText(text);
     },
+  },
 
-    data: function() {
-      return {
-        adUrl: '',
-        adSrc: 'https://picsum.photos/300/250',
-        ruleBelow: true,
-        hasRules: true,
-        altText: 'ADVERTISEMENT - ',
-      };
-    },
-  }
-
+  data: function () {
+    return {
+      adUrl: '',
+      adSrc: 'https://picsum.photos/300/250',
+      ruleBelow: true,
+      hasRules: true,
+      altText: 'ADVERTISEMENT - ',
+    };
+  },
+};
 </script>
-
