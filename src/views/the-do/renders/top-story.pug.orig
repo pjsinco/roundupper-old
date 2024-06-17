@@ -1,0 +1,50 @@
+table(style="border-collapse: collapse;" width="100%" cellspacing="0" cellpadding="0" align="center" slot="render")
+  tr
+    td(align="center")
+      table(class="fullwidth" style="border-collapse: collapse;" width="100%" cellspacing="0" cellpadding="0" align="center")
+        tr
+          td &#160;
+
+        tr
+          td &#160;
+  tr
+    td(align="center")
+      table(class="fullwidth" style="border-collapse: collapse;" width="480" cellspacing="0" cellpadding="0" align="center")
+        tr
+          td
+            a(v-bind:href="link | stripSpaces" target="_blank")
+              img(alt="Image" border="0" class="fullwidth" v-bind:src="imageUrl | stripSpaces" style="display: block;" width="480")
+        tr
+          td &#160;
+  tr
+    td
+      table(class="fullwidth" style="border-collapse: collapse;" width="480" cellspacing="0" cellpadding="0" align="center")
+        tr
+          td(align="center" width="15")
+            img(alt="" border="0" height="15" width="15" src="https://resources.osteopathic.org/l/979203/2023-11-13/c7zt4/979203/1699890535jNe7NLJe/spacer.gif" style="display: block;")
+          td(align="center")
+            table(class="fullwidth" style="border-collapse: collapse;" width="400" cellspacing="0" cellpadding="0" align="center")
+              tr
+                td(style="font-family: helvetica; font-size: 14px; color: #58595b; line-height: 18px; padding-bottom: 10px; font-weight: normal; text-transform: uppercase; letter-spacing: 1px;" align="center") {{ kicker }}
+              tr
+                td(style="font-family: helvetica; font-size: 16pt; color: #22528e; line-height: 18px; padding-bottom: 10px; font-weight: 700;" align="center")
+                  a(v-bind:href="link | stripSpaces" style="color: #22528e; text-decoration: none; font-family: helvetica; font-size: 28px; line-height: 34px; font-weight: 700;" target="_blank") {{ headline }}
+              tr
+                td(style="font-family: helvetica; font-size: 15px; color: #686d75; line-height: 22px; font-weight: normal;" align="center") {{ excerpt }}
+              tr
+                td &#160;
+          td(align="center" width="15")
+            img(alt="" border="0" height="15" width="15" src="https://resources.osteopathic.org/l/979203/2023-11-13/c7zt4/979203/1699890535jNe7NLJe/spacer.gif" style="display: block;")
+  tr
+    td(align="center")
+      table(class="fullwidth" style="border-collapse: collapse;" width="480" cellspacing="0" cellpadding="0" align="center")
+        tr
+          td(align="center" vertical-align="middle" style="font-size:0px;padding:10px 25px;word-break:break-word;")
+            include ./../../includes/button
+  tr
+    td(align="center")
+      table(class="fullwidth" style="border-collapse: collapse; height: 50px;" width="400" cellspacing="0" cellpadding="0" align="center")
+        tr
+          td(style="border-bottom: 1px solid #efefef;") &#160;
+        tr
+          td &#160;
